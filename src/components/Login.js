@@ -46,7 +46,7 @@ class Login extends Component {
         {/* Renders the form */}
         <div className="adjust-login">
           <div id='login-component'>
-            <div className="short-logo-center"><img id="small-shortLogo" src="logo.svg" /></div>
+            <div className="short-logo-center">{<Logo className="logo short-logo-center" />}</div>
             <h1 className='login-info'>Login</h1>
             <section>
               <form className="login-form" onsubmit={this.handleSubmit}>
