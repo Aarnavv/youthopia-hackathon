@@ -18,13 +18,13 @@ function Footer() {
         </div>
         <div className="links">
           <a href="mailto:atlantis.smartcity@gmail.com" target="_blank" className="contact" rel="noreferrer">
-            <img src={gmail} alt="" className="logo gmail" />
+            <img src={gmail} alt="" className="logo-contact gmail" />
           </a>
           <a href="https://twitter.com/theatlantis_sc" target="_blank" className="contact" rel="noreferrer">
-            <img src={twitter} alt="" className="logo twitter" />
+            <img src={twitter} alt="" className="logo-contact twitter" />
           </a>
           <a href="https://www.instagram.com/theatlantis_sc/" target="_blank" className="contact" rel="noreferrer">
-            <img src={instagram} alt="" className="logo insta" />
+            <img src={instagram} alt="" className="logo-contact insta" />
           </a>
         </div>
         <p>
