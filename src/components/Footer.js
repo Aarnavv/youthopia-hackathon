@@ -28,7 +28,7 @@ function Footer() {
           </a>
         </div>
         <p>
-          &copy; 2022 by La Martiniere for Boys, Kolkata for Youthopia 2022 Hackathon
+          &copy; 2022 by La Martiniere for Boys, Kolkata for Hackathon- Youthopia 2022.
         </p>
       </footer>
     </div>

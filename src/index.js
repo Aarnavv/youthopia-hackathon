@@ -16,7 +16,7 @@ ReactDOM.render(
   <Router>
     <Routes>
       <Route path="/home" element={<><Navbar /><Home />  <Footer /> </>} >
-        <Route path="" element={<>  </>} />
+        {/* <Route path="" element={<>  </>} /> */}
       </Route>
       <Route path="/" element={<Landing />} />
 
@@ -27,6 +27,10 @@ ReactDOM.render(
       <Route path="/home/suggestions" element={<><Navbar /> <Footer />  </>} />
       <Route path="/home/complaints" element={<><Navbar /> <Footer />  </>} />
       <Route path="/home/reservations" element={<><Navbar /> <Footer />  </>} />
+
+      <Route path="/home/admin/make-announcements" element={<><Navbar /> <Footer />  </>} />
+      <Route path="/home/admin/view-complaints" element={<><Navbar /> <Footer />  </>} />
+      <Route path="/home/admin/view-suggestions" element={<><Navbar /> <Footer />  </>} />
 
       <Route path="*" element={<><Navbar /><Error />  <Footer /></>} />
     </Routes>
