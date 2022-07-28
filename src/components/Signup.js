@@ -64,7 +64,7 @@ class Login extends Component {
                   <div className='login-label'>
                     Aadhar Card Number
                   </div>
-                  <input name="email" autoComplete="off" className="login-fields" type="email" value={this.state.aadhar} onChange={this.handleInput} />
+                  <input name="aadhar" autoComplete="off" className="login-fields" type="text" value={this.state.aadhar} onChange={this.handleInput} />
                 </div>
                 <div className="login-entries">
                   <div className='login-label'>
