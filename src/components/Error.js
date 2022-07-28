@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom"
-import "./css/Error.css";
+import "./css/error.css";
 
 
 function Error() {
