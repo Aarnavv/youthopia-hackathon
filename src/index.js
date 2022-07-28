@@ -28,13 +28,9 @@ ReactDOM.render(
       <Route path="/home/complaints" element={<><Navbar /> <Footer />  </>} />
       <Route path="/home/reservations" element={<><Navbar /> <Footer />  </>} />
 
-      <Route path="*" element={<Error />} />
+      <Route path="*" element={<><Navbar /><Error />  <Footer /></>} />
     </Routes>
   </Router >,
-
-  // <div className="text">
-  //   <p>17041e9f83690d6cf896b9d686512d491c1181c0</p>
-  // </div>,
 
   document.getElementById("root")
 );
