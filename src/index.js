@@ -8,6 +8,7 @@ import {
   Home,
   Error,
   Footer,
+  Landing,
 } from "./components";
 
 ReactDOM.render(
@@ -16,7 +17,7 @@ ReactDOM.render(
       <Route path="/home" element={<Home />} >
         <Route path="" element={<>  </>} />
       </Route>
-      <Route path="/" element={<Home />} >
+      <Route path="/" element={<Landing />} >
         <Route path="" element={<>  </>} />
       </Route>
 
