@@ -15,7 +15,7 @@ import {
 ReactDOM.render(
   <Router>
     <Routes>
-      <Route path="/home" element={<><Navbar /><Home />  </>} >
+      <Route path="/home" element={<><Navbar /><Home />  <Footer /> </>} >
         <Route path="" element={<>  </>} />
       </Route>
       <Route path="/" element={<Landing />} />
@@ -24,14 +24,13 @@ ReactDOM.render(
         <Route path="" element={<>  </>} />
       </Route>
 
-      <Route path="/home/suggestions" element={<Landing />} />
-      <Route path="/home/complaints" element={<Landing />} />
-      <Route path="/home/reservations" element={<Landing />} />
+      <Route path="/home/suggestions" element={<><Navbar /> <Footer />  </>} />
+      <Route path="/home/complaints" element={<><Navbar /> <Footer />  </>} />
+      <Route path="/home/reservations" element={<><Navbar /> <Footer />  </>} />
 
       <Route path="*" element={<Error />} />
     </Routes>
-    <Footer />
-  </Router>,
+  </Router >,
 
   // <div className="text">
   //   <p>17041e9f83690d6cf896b9d686512d491c1181c0</p>
