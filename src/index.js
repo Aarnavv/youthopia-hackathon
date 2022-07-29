@@ -23,34 +23,32 @@ import {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 export let user = null
-export function updateUser(loggedInUser){
+export function updateUser(loggedInUser) {
   user = loggedInUser
 }
-function isLoggedIn(){
-  if(user){
-    return(
-      <Routes>
-      <Route path="/home" element={<><Navbar /><Home />  <Footer /> </>} />
-      <Route path="/home/announcements" element={<><Navbar /><Announcements />  <Footer />  </>} />
-      <Route path="/home/suggestions" element={<><Navbar /> <Suggestions /> <Footer /> </>} />
-      <Route path="/home/complaints" element={<><Navbar /> <Complaints /><Footer />  </>} />
-      <Route path="/home/home-reservations" element={<><Navbar /> <HomeReservations />  <Footer />  </>} />
-      <Route path="/home/restaurant-reservations" element={<><Navbar /> <RestaurantReservations />  <Footer />  </>} />
-      <Route path="/home/theatre-reservations" element={<><Navbar /> <TheatreReservations />  <Footer />  </>} />
-      <Route path="/home/admin/make-announcements" element={<><Navbar /> <AdminAnnouncements /> <Footer />  </>} />
-      <Route path="/home/admin/view-complaints" element={<><Navbar /> <AdminComplaints /> <Footer />  </>} />
-      <Route path="/home/admin/view-suggestions" element={<><Navbar /><AdminSuggestions />  <Footer />  </>} />
-      </Routes>
-      )}
-    else{
-      return {}
-    }
+
+const pages = [
+  <Route key={1} path="/home" element={<><Navbar /><Home />  <Footer /> </>} />,
+  <Route key={1} path="/home/announcements" element={<><Navbar /><Announcements />  <Footer />  </>} />,
+  <Route key={1} path="/home/suggestions" element={<><Navbar /> <Suggestions /> <Footer /> </>} />,
+  <Route key={1} path="/home/complaints" element={<><Navbar /> <Complaints /><Footer />  </>} />,
+  <Route key={1} path="/home/home-reservations" element={<><Navbar /> <HomeReservations />  <Footer />  </>} />,
+  <Route key={1} path="/home/restaurant-reservations" element={<><Navbar /> <RestaurantReservations />  <Footer />  </>} />,
+  <Route key={1} path="/home/theatre-reservations" element={<><Navbar /> <TheatreReservations />  <Footer />  </>} />,
+  <Route key={1} path="/home/admin/make-announcements" element={<><Navbar /> <AdminAnnouncements /> <Footer />  </>} />,
+  <Route key={1} path="/home/admin/view-complaints" element={<><Navbar /> <AdminComplaints /> <Footer />  </>} />,
+  <Route key={1} path="/home/admin/view-suggestions" element={<><Navbar /><AdminSuggestions />  <Footer />  </>} />
+]
+
+function renderPage() {
+  if (user !== null) return (pages)
 }
+
 const page = (
   <Router>
     <Routes>
       <Route path="/" element={<Landing />} />
-      {isLoggedIn()}
+      {renderPage()}
       <Route path="*" element={<><Navbar /><Error />  <Footer /></>} />
     </Routes>
   </Router >
