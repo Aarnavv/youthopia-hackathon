@@ -11,6 +11,8 @@ import {
   Landing,
   Navbar,
   Announcements,
+  Complaints,
+  Suggestions,
 } from "./components";
 
 ReactDOM.render(
@@ -21,8 +23,8 @@ ReactDOM.render(
 
       <Route path="/home/announcements" element={<><Navbar /><Announcements />  <Footer />  </>} />
 
-      <Route path="/home/suggestions" element={<><Navbar /> <Footer />  </>} />
-      <Route path="/home/complaints" element={<><Navbar /> <Footer />  </>} />
+      <Route path="/home/suggestions" element={<><Navbar /> <Suggestions /> <Footer /> </>} />
+      <Route path="/home/complaints" element={<><Navbar /> <Complaints /><Footer />  </>} />
       <Route path="/home/reservations" element={<><Navbar /> <Footer />  </>} />
 
       <Route path="/home/admin/make-announcements" element={<><Navbar /> <Footer />  </>} />
