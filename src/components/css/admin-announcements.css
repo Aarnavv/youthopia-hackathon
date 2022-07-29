@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
 .header {
   min-height: 85vh;
   width: 100%;
@@ -8,11 +6,7 @@
   background-size: cover;
 }
 
-.complaints-logo {
-  width: 120px;
-}
-
-.complaints-form, .suggestions-form {
+.announcement-form {
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
@@ -29,7 +23,7 @@
   font-size: 24px;
 }
 
-.complaints-title, .suggestions-title {
+.admin-announcement-h1 {
   margin: 0 auto;
   font-family: 'Major Mono Display', 'Poppins';
   font-size: 4rem;
@@ -46,7 +40,7 @@ textarea {
   border: 0.5px solid white;
 }
 
-.button-complaint, .button-suggestions {
+.button-announcement {
   font-family: 'Poppins', sans-serif;
   background: transparent;
   color: white;
@@ -58,7 +52,7 @@ textarea {
   transition: all 0.25s linear;
 }
 
-.button-complaint:hover, .button-suggestions:hover {
+.button-announcement:hover {
   background: #2973ac;
   color: #fff;
   border: 1px solid #eee;

@@ -15,13 +15,15 @@ import {
   Suggestions,
   AdminComplaints,
   AdminSuggestions,
+  AdminAnnouncements,
 } from "./components";
 
 ReactDOM.render(
   <Router>
     <Routes>
-      <Route path="/home" element={<><Navbar /><Home />  <Footer /> </>} />
       <Route path="/" element={<Landing />} />
+
+      <Route path="/home" element={<><Navbar /><Home />  <Footer /> </>} />
 
       <Route path="/home/announcements" element={<><Navbar /><Announcements />  <Footer />  </>} />
 
@@ -29,8 +31,8 @@ ReactDOM.render(
       <Route path="/home/complaints" element={<><Navbar /> <Complaints /><Footer />  </>} />
       <Route path="/home/reservations" element={<><Navbar /> <Footer />  </>} />
 
-      <Route path="/home/admin/make-announcements" element={<><Navbar /> <Footer />  </>} />
-      <Route path="/home/admin/view-complaints" element={<><Navbar /> <AdminComplaints/> <Footer />  </>} />
+      <Route path="/home/admin/make-announcements" element={<><Navbar /> <AdminAnnouncements /> <Footer />  </>} />
+      <Route path="/home/admin/view-complaints" element={<><Navbar /> <AdminComplaints /> <Footer />  </>} />
       <Route path="/home/admin/view-suggestions" element={<><Navbar /><AdminSuggestions />  <Footer />  </>} />
 
       <Route path="*" element={<><Navbar /><Error />  <Footer /></>} />
