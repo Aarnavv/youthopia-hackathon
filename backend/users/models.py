@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 class Citizen(models.Model):
   user = models.OneToOneField(User,on_delete=models.CASCADE)
   aadhar = models.CharField(max_length=255,null=True)
-  profile_pic = models.ImageField(upload_to="profile/",null=True)
   
   def __str__(self):
     return self.user.username
