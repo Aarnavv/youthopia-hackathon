@@ -9,20 +9,17 @@ import {
   Error,
   Footer,
   Landing,
-  Navbar
+  Navbar,
+  Announcements,
 } from "./components";
 
 ReactDOM.render(
   <Router>
     <Routes>
-      <Route path="/home" element={<><Navbar /><Home />  <Footer /> </>} >
-        {/* <Route path="" element={<>  </>} /> */}
-      </Route>
+      <Route path="/home" element={<><Navbar /><Home />  <Footer /> </>} />
       <Route path="/" element={<Landing />} />
 
-      <Route path="/home/announcements" element={<><Navbar />  </>} >
-        <Route path="" element={<>  </>} />
-      </Route>
+      <Route path="/home/announcements" element={<><Navbar /><Announcements />  <Footer />  </>} />
 
       <Route path="/home/suggestions" element={<><Navbar /> <Footer />  </>} />
       <Route path="/home/complaints" element={<><Navbar /> <Footer />  </>} />

@@ -5,15 +5,6 @@ import Signup from './Signup'
 import LandingVideo from "./Images/videos/landing-video.mp4"
 import Logo from "./Logo"
 
-window.addEventListener('load', async () => {
-  let video = document.querySelector('video[muted][autoplay]');
-  try {
-    await video.play();
-  } catch (err) {
-    video.controls = true;
-  }
-});
-
 class Landing extends React.Component {
   constructor(props) {
     super(props);
@@ -69,7 +60,7 @@ class Landing extends React.Component {
 
     return (
       <React.Fragment>
-        <video src={LandingVideo} type="video/mp4" autoPlay muted defaultMuted loop id="landing-video" />
+        <video src={LandingVideo} type="video/mp4" autoPlay muted loop id="landing-video" />
         <section className="flex-section">
           <div id="left-section">
             <div className="left-section-container">
