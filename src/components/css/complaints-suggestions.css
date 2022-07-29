@@ -32,6 +32,7 @@
 
 .complaints-title, .suggestions-title {
   margin: 0 auto;
+  font-family: 'Major Mono Display', 'Poppins';
   font-size: 4rem;
   color: #fff;
   width: max-content;

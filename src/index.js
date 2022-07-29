@@ -13,6 +13,8 @@ import {
   Announcements,
   Complaints,
   Suggestions,
+  AdminComplaints,
+  AdminSuggestions,
 } from "./components";
 
 ReactDOM.render(
@@ -28,8 +30,8 @@ ReactDOM.render(
       <Route path="/home/reservations" element={<><Navbar /> <Footer />  </>} />
 
       <Route path="/home/admin/make-announcements" element={<><Navbar /> <Footer />  </>} />
-      <Route path="/home/admin/view-complaints" element={<><Navbar /> <Footer />  </>} />
-      <Route path="/home/admin/view-suggestions" element={<><Navbar /> <Footer />  </>} />
+      <Route path="/home/admin/view-complaints" element={<><Navbar /> <AdminComplaints/> <Footer />  </>} />
+      <Route path="/home/admin/view-suggestions" element={<><Navbar /><AdminSuggestions />  <Footer />  </>} />
 
       <Route path="*" element={<><Navbar /><Error />  <Footer /></>} />
     </Routes>

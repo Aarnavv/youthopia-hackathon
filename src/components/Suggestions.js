@@ -1,14 +1,10 @@
 import React from "react";
 import "./css/complaints-suggestions.css";
-import Logo from "./Logo";
 
 function Suggestions() {
   return (
     <div className="suggestions">
       <section className="header">
-        <nav>
-          <img alt="" src={<Logo />} />
-        </nav>
         <div className="container">
           <h1 className="suggestions-title">  Suggestion Form  </h1>
           <form className="suggestions-form" action="https://formspree.io/f/xgeqwekp" method="POST">

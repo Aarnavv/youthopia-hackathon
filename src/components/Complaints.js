@@ -1,12 +1,10 @@
 import React from "react";
 import "./css/complaints-suggestions.css";
-import Logo from "./Logo"
 
 function Complaints() {
   return (
     <div className="complaints">
       <section className="header">
-        <img className="complaints-logo" alt="" src={<Logo />} />
         <div className="container">
           <h1 className="complaints-title">  Complaint Form  </h1>
           <form className="complaints-form" action="https://formspree.io/f/xqkjzkeb" method="POST" >
