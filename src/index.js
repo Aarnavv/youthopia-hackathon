@@ -30,9 +30,6 @@ const pages = [
   <Route key={1} path="/home/home-reservations" element={<><Navbar /> <HomeReservations />  <Footer />  </>} />,
   <Route key={1} path="/home/restaurant-reservations" element={<><Navbar /> <RestaurantReservations />  <Footer />  </>} />,
   <Route key={1} path="/home/theatre-reservations" element={<><Navbar /> <TheatreReservations />  <Footer />  </>} />,
-  <Route key={1} path="/home/admin/make-announcements" element={<><Navbar /> <AdminAnnouncements /> <Footer />  </>} />,
-  <Route key={1} path="/home/admin/view-complaints" element={<><Navbar /> <AdminComplaints /> <Footer />  </>} />,
-  <Route key={1} path="/home/admin/view-suggestions" element={<><Navbar /><AdminSuggestions />  <Footer />  </>} />
 ]
 
 let user = localStorage.getItem('user')
@@ -72,7 +69,6 @@ const admin_pages = [
 function renderPage() {
 	if (user !== null) {
     user = JSON.parse(user)
-    console.log(user)
 	  if (user[0].fields.is_superuser) {
 		return [admin_pages,...pages]
 	  }

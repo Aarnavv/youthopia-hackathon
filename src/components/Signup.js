@@ -14,6 +14,7 @@ class Login extends Component {
       password: '',
       confirm: '',
     }
+    localStorage.setItem('user',null)
     this.handleInput = this.handleInput.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -38,7 +39,9 @@ class Login extends Component {
 			.then(async (res) => await res.json())
 			.then((json) => {
 				console.log(json)
-				// updateUser(json)
+        localStorage.setItem('user', JSON.stringify(json))
+				window.location.replace(window.location.href + 'home')
+				console.log(localStorage.getItem('user'))
 			})
   }
   render() {
