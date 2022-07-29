@@ -9,4 +9,6 @@ export { default as Suggestions } from "./Suggestions";
 export { default as AdminComplaints } from "./AdminComplaints";
 export { default as AdminSuggestions } from "./AdminSuggestions";
 export { default as AdminAnnouncements } from "./AdminAnnouncements";
-export { default as Reservations } from "./Reservations";
+export { default as HomeReservations } from "./HomeReservations";
+export { default as RestaurantReservations } from "./RestaurantReservations.js";
+export { default as TheatreReservations } from "./TheatreReservations";

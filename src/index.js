@@ -16,7 +16,9 @@ import {
   AdminComplaints,
   AdminSuggestions,
   AdminAnnouncements,
-  Reservations
+  HomeReservations,
+  RestaurantReservations,
+  TheatreReservations
 } from "./components";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -32,7 +34,9 @@ const page = (
 
       <Route path="/home/suggestions" element={<><Navbar /> <Suggestions /> <Footer /> </>} />
       <Route path="/home/complaints" element={<><Navbar /> <Complaints /><Footer />  </>} />
-      <Route path="/home/reservations" element={<><Navbar /> <Reservations />  <Footer />  </>} />
+      <Route path="/home/home-reservations" element={<><Navbar /> <HomeReservations />  <Footer />  </>} />
+      <Route path="/home/restaurant-reservations" element={<><Navbar /> <RestaurantReservations />  <Footer />  </>} />
+      <Route path="/home/theatre-reservations" element={<><Navbar /> <TheatreReservations />  <Footer />  </>} />
 
       <Route path="/home/admin/make-announcements" element={<><Navbar /> <AdminAnnouncements /> <Footer />  </>} />
       <Route path="/home/admin/view-complaints" element={<><Navbar /> <AdminComplaints /> <Footer />  </>} />

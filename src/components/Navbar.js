@@ -75,8 +75,18 @@ function Navbar() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/home/reservations">
-                    <span className="dropdown-item" id="latest-issue-home" href="Make Reservations">Reservations</span>
+                  <NavLink to="/home/home-reservations">
+                    <span className="dropdown-item" id="latest-issue-home" href="Make Reservations">Home Reservations</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/home/theatre-reservations">
+                    <span className="dropdown-item" id="latest-issue-home" href="Make Reservations">Theatre Reservations</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/home/restaurant-reservations">
+                    <span className="dropdown-item" id="latest-issue-home" href="Make Reservations">Restaurant Reservations</span>
                   </NavLink>
                 </li>
               </ul>
