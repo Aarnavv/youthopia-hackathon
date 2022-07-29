@@ -1,6 +1,7 @@
 from .models import Suggestion
 from django.core import serializers
 from django.http import HttpResponse
+from django.shortcuts import redirect
 
 def all(request):
   suggestions = Suggestion.objects.filter()
@@ -10,10 +11,9 @@ def all(request):
 def create(request):
   if request.method == "POST":
     suggestion = Suggestion()
-    suggestion.user = request.user.citizen
-    suggestion.title = request.POST["title"]
-    suggestion.description = request.POST["description"]
+    suggestion.user = request.POST["full_name"]
+    suggestion.description = request.POST["message"]
+    suggestion.aadhar = request.POST["aadhar"]
+    suggestion.contact = request.POST["phone_number"]
     suggestion.save()
-    suggestion = Suggestion.objects.filter(id=suggestion.id)
-    suggestion = serializers.serialize('json', suggestion)
-    return HttpResponse(suggestion, content_type="text/json-comment-filtered")
+    return redirect("http://localhost:3000/home")

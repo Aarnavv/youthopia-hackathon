@@ -1,77 +1,70 @@
-import React, { Component } from 'react';
-import "./css/landing.css";
-import Logo from "./Logo"
-import { useLocation } from 'react-router-dom'
-// import {
-// 	BrowserRouter as Router,
-// 	Switch,
-// 	Route,
-// 	Redirect,
-// } from 'react-router-dom'
-import {user,updateUser} from "../index"
-
-
-function ChangePage() {
-	let location = useLocation()
-	location.href = '/home'
-}
+import React, { Component } from 'react'
+import './css/landing.css'
+import Logo from './Logo'
+import { user, updateUser } from '../index'
 
 //component for LoginForm. used in App.js
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: '',
-      password: '',
-      aadhar:'',
-    }
-    this.handleInput = this.handleInput.bind(this)
-    this.submitForm = this.submitForm.bind(this)
-  }
-  //handles change in input.
-  handleInput(e) {
-    const target = e.target
-    const value = target.value
-    const name = target.name
-    this.setState({
-      [name]: value
-    })
-  }
+	constructor(props) {
+		super(props)
+		this.state = {
+			username: '',
+			password: '',
+			aadhar: '',
+		}
+		this.handleInput = this.handleInput.bind(this)
+		this.submitForm = this.submitForm.bind(this)
+	}
+	//handles change in input.
+	handleInput(e) {
+		const target = e.target
+		const value = target.value
+		const name = target.name
+		this.setState({
+			[name]: value,
+		})
+	}
 
-  //sends api request for GUNing
-  submitForm(e) {
-    e.preventDefault()
-    let a_tag = document.getElementById("propagate")
-    let form_data = new FormData()
-    form_data.append('username',this.state.username)
-    form_data.append('password',this.state.password)
-    form_data.append('aadhar',this.state.aadhar)
-    console.log(this)
-    console.log(form_data)
-    fetch('http://localhost:8000/users/', {
-        method: 'POST',
-        body:form_data
-    })
-    .then(async (res) => await res.json())
-    .then((json) => {
-      console.log(json)
-      updateUser(json)
-      ChangePage()
-    })
-    };
-  render() {
-    return (
+	//sends api request for GUNing
+	submitForm(e) {
+		e.preventDefault()
+		let a_tag = document.getElementById('propagate')
+		let form_data = new FormData()
+		form_data.append('username', this.state.username)
+		form_data.append('password', this.state.password)
+		form_data.append('aadhar', this.state.aadhar)
+		console.log(this)
+		console.log(form_data)
+		fetch('http://localhost:8000/users/', {
+			method: 'POST',
+			body: form_data,
+		})
+			.then(async (res) => await res.json())
+			.then((json) => {
+				console.log(json)
+				updateUser(json)
+				window.location.replace(window.location.href + 'home')
+			})
+	}
+	render() {
+		return (
 			<React.Fragment>
 				{/* Renders the form */}
 				<div className="adjust-login">
-        <a id="propagate" hidden></a>
+					<a id="propagate" hidden></a>
 					<div id="login-component">
 						<div className="short-logo-center">
 							{<Logo className="logo short-logo-center" />}
 						</div>
 						<h1 className="login-info">Login</h1>
 						<section>
-							<form className="login-form" onsubmit={this.handleSubmit} action="/home" id="form" method='POST'>
+							<form
+								className="login-form"
+								onsubmit={this.handleSubmit}
+								action="/home"
+								id="form"
+								method="POST"
+							>
 								<div className="login-entries">
 									<div className="login-label">Username</div>
 									<input
@@ -118,7 +111,7 @@ class Login extends Component {
 				</div>
 			</React.Fragment>
 		)
-  }
+	}
 }
 
-export default Login;
+export default Login

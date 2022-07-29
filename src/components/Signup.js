@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./css/landing.css";
 import Logo from "./Logo"
+import {user,updateUser} from "../index"
 
 
 class Login extends Component {
@@ -26,22 +27,19 @@ class Login extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    fetch('/users_create', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        username: 'fff',
-        email: this.state.email,
-        aadhar: this.state.aadhar,
-        confirm: this.state.confirm
-      })
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
-    // if (response.status !== 200) {
-    //     throw Error(body.message)
-    // }
-    // return body;
+    let form_data = new FormData()
+    form_data.append('username', this.state.username)
+    form_data.append('password', this.state.confirm)
+    form_data.append('aadhar', this.state.aadhar)
+    fetch('http://localhost:8000/users/register/', {
+			method: 'POST',
+			body: form_data,
+		})
+			.then(async (res) => await res.json())
+			.then((json) => {
+				console.log(json)
+				updateUser(json)
+			})
   }
   render() {
 

@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import redirect
 from .models import Announcements
 import json 
 from django.core import serializers
@@ -10,15 +11,14 @@ def all(request):
 
 def create_announcement(request):
   if request.method == "POST":
-    obj = json.loads(request.POST["user"])
-    if obj["is_superuser"]:
-      title = request.POST["title"]
-      description = request.POST["description"]
+      title = request.POST["subject"]
+      description = request.POST["message"]
+      name = request.POST["name"]
+      date = request.POST["date"]
       announcement = Announcements()
       announcement.title = title
       announcement.description = description
+      announcement.name = name
+      announcement.date = date
       announcement.save()
-      announcement = serializers.serialize('json', [announcement])
-      return HttpResponse(announcement, content_type="text/json-comment-filtered")
-          
-        
+      return redirect('http://localhost:3000/home')

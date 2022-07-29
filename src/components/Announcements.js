@@ -27,7 +27,7 @@ class Announcements extends React.Component {
             return (
               <div className="one-announcement">
                 <div className="bold"> By {announcement.fields.title}, </div>
-                <div className="bold"> {announcement.fields.description} </div>
+                <div className="bold"> {announcement.fields.date} </div>
                 <br />
                 <br />
                 <div className="message">
