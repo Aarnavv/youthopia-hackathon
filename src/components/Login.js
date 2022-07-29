@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './css/landing.css'
 import Logo from './Logo'
-import { user, updateUser } from '../index'
 
 //component for LoginForm. used in App.js
 class Login extends Component {
@@ -12,6 +11,9 @@ class Login extends Component {
 			password: '',
 			aadhar: '',
 		}
+    localStorage.setItem(
+      'user',null
+    )
 		this.handleInput = this.handleInput.bind(this)
 		this.submitForm = this.submitForm.bind(this)
 	}
@@ -42,8 +44,9 @@ class Login extends Component {
 			.then(async (res) => await res.json())
 			.then((json) => {
 				console.log(json)
-				updateUser(json)
+        localStorage.setItem('user',JSON.stringify(json))
 				window.location.replace(window.location.href + 'home')
+        console.log(localStorage.getItem('user'))
 			})
 	}
 	render() {

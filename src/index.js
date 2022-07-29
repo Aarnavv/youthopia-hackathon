@@ -22,12 +22,6 @@ import {
 } from "./components";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-export let user = null
-export function updateUser(loggedInUser) {
-  user = loggedInUser
-  console.log(user)
-}
-
 const pages = [
   <Route key={1} path="/home" element={<><Navbar /><Home />  <Footer /> </>} />,
   <Route key={1} path="/home/announcements" element={<><Navbar /><Announcements />  <Footer />  </>} />,
@@ -40,6 +34,8 @@ const pages = [
   <Route key={1} path="/home/admin/view-complaints" element={<><Navbar /> <AdminComplaints /> <Footer />  </>} />,
   <Route key={1} path="/home/admin/view-suggestions" element={<><Navbar /><AdminSuggestions />  <Footer />  </>} />
 ]
+
+let user = localStorage.getItem('user')
 
 const admin_pages = [
 	<Route
@@ -75,8 +71,10 @@ const admin_pages = [
 
 function renderPage() {
 	if (user !== null) {
+    user = JSON.parse(user)
+    console.log(user)
 	  if (user[0].fields.is_superuser) {
-		return admin_pages += pages
+		return [admin_pages,...pages]
 	  }
     else{
       return pages

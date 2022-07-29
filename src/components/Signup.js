@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./css/landing.css";
 import Logo from "./Logo"
-import {user,updateUser} from "../index"
+
 
 
 class Login extends Component {
@@ -38,7 +38,7 @@ class Login extends Component {
 			.then(async (res) => await res.json())
 			.then((json) => {
 				console.log(json)
-				updateUser(json)
+				// updateUser(json)
 			})
   }
   render() {
