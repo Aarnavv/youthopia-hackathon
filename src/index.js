@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -19,7 +19,9 @@ import {
   Reservations
 } from "./components";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const page = (
   <Router>
     <Routes>
       <Route path="/" element={<Landing />} />
@@ -38,6 +40,7 @@ ReactDOM.render(
 
       <Route path="*" element={<><Navbar /><Error />  <Footer /></>} />
     </Routes>
-  </Router >,
-  document.getElementById("root")
+  </Router >
 );
+
+root.render(page);
