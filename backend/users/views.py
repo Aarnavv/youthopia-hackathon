@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 def login_user(request):
   if request.method == "POST":
+    print(request.POST)
     username = request.POST['username']
     password = request.POST['password']
     aadhar = request.POST['aadhar']
