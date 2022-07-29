@@ -26,7 +26,7 @@ class Announcements extends React.Component {
           el.map((announcement) => {
             return (
               <div className="one-announcement">
-                <div className="bold"> By {announcement.fields.title}, </div>
+                <div className="bold"> By {announcement.fields.name}, </div>
                 <div className="bold"> {announcement.fields.date} </div>
                 <br />
                 <br />
