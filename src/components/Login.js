@@ -43,7 +43,7 @@ class Login extends Component {
 			.then((json) => {
 				console.log(json)
 				updateUser(json)
-				window.location.replace(window.location.href + 'home')
+				// window.location.replace(window.location.href + 'home')
 			})
 	}
 	render() {

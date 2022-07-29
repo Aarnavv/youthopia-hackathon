@@ -22,7 +22,7 @@ import {
 } from "./components";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-export let user = {"A":"WD"}
+export let user = {"null":"wakjb"}
 export function updateUser(loggedInUser) {
   user = loggedInUser
   console.log(user)
@@ -36,13 +36,17 @@ const pages = [
   <Route key={1} path="/home/home-reservations" element={<><Navbar /> <HomeReservations />  <Footer />  </>} />,
   <Route key={1} path="/home/restaurant-reservations" element={<><Navbar /> <RestaurantReservations />  <Footer />  </>} />,
   <Route key={1} path="/home/theatre-reservations" element={<><Navbar /> <TheatreReservations />  <Footer />  </>} />,
-  <Route key={1} path="/home/admin/make-announcements" element={<><Navbar /> <AdminAnnouncements /> <Footer />  </>} />,
-  <Route key={1} path="/home/admin/view-complaints" element={<><Navbar /> <AdminComplaints /> <Footer />  </>} />,
-  <Route key={1} path="/home/admin/view-suggestions" element={<><Navbar /><AdminSuggestions />  <Footer />  </>} />
+]
+
+const admin_pages = [
+
 ]
 
 function renderPage() {
   if (user !== null) return (pages)
+  if (user[0].is_superuser){
+    return (admin_pages)
+  }
 }
 
 const page = (
