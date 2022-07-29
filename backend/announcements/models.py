@@ -1,7 +1,7 @@
 from django.db import models
 
 class Announcements(models.Model):
-  title = models.TextField(null=True)
+  user = models.ForeignKey
   description = models.TextField(null=True)
   
   def __str__(self):
