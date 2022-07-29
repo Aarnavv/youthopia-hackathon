@@ -22,26 +22,35 @@ import {
 } from "./components";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-const page = (
-  <Router>
-    <Routes>
-      <Route path="/" element={<Landing />} />
-
+export let user = null
+export function updateUser(loggedInUser){
+  user = loggedInUser
+}
+function isLoggedIn(){
+  if(user){
+    return(
+      <Routes>
       <Route path="/home" element={<><Navbar /><Home />  <Footer /> </>} />
-
       <Route path="/home/announcements" element={<><Navbar /><Announcements />  <Footer />  </>} />
-
       <Route path="/home/suggestions" element={<><Navbar /> <Suggestions /> <Footer /> </>} />
       <Route path="/home/complaints" element={<><Navbar /> <Complaints /><Footer />  </>} />
       <Route path="/home/home-reservations" element={<><Navbar /> <HomeReservations />  <Footer />  </>} />
       <Route path="/home/restaurant-reservations" element={<><Navbar /> <RestaurantReservations />  <Footer />  </>} />
       <Route path="/home/theatre-reservations" element={<><Navbar /> <TheatreReservations />  <Footer />  </>} />
-
       <Route path="/home/admin/make-announcements" element={<><Navbar /> <AdminAnnouncements /> <Footer />  </>} />
       <Route path="/home/admin/view-complaints" element={<><Navbar /> <AdminComplaints /> <Footer />  </>} />
       <Route path="/home/admin/view-suggestions" element={<><Navbar /><AdminSuggestions />  <Footer />  </>} />
-
+      </Routes>
+      )}
+    else{
+      return {}
+    }
+}
+const page = (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      {isLoggedIn()}
       <Route path="*" element={<><Navbar /><Error />  <Footer /></>} />
     </Routes>
   </Router >

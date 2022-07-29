@@ -5,10 +5,8 @@ import Logo from "./Logo"
 
 //component for LoginForm. used in App.js
 class Login extends Component {
-  // Logic for the form
   constructor(props) {
     super(props);
-    //initialization for entry fields
     this.state = {
       username: '',
       password: '',
