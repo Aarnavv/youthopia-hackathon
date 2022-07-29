@@ -25,6 +25,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 export let user = null
 export function updateUser(loggedInUser) {
   user = loggedInUser
+  console.log(user)
 }
 
 const pages = [
