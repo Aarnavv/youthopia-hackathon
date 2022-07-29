@@ -18,7 +18,7 @@ function Suggestions() {
                   Name:
                 </td>
                 <td>
-                  <input types="text" placeholder="Full Name" name="" />
+                  <input type="text" placeholder="Full Name" name="" />
                 </td>
               </tr>
               <tr>
@@ -26,7 +26,7 @@ function Suggestions() {
                   Aadhar:
                 </td>
                 <td>
-                  <input types="number" placeholder="Aadhar no." name="" />
+                  <input type="number" placeholder="Aadhar no." name="" />
                 </td>
               </tr>
               <tr>
@@ -34,7 +34,7 @@ function Suggestions() {
                   E-mail:
                 </td>
                 <td>
-                  <input types="mail" placeholder="Email" name="" />
+                  <input type="mail" placeholder="Email" name="" />
                 </td>
               </tr>
               <tr>
@@ -50,7 +50,7 @@ function Suggestions() {
                     <option>+86</option>
                     <option>+93</option>
                   </select>
-                  <input types="Phone" placeholder="82735****" name="" />
+                  <input type="number" placeholder="82735****" name="" />
                 </td>
               </tr>
               <tr>
