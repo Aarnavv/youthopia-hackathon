@@ -67,7 +67,7 @@ const admin_pages = [
 ]
 
 function renderPage() {
-  if (user !== 'null' | user !== null) {
+  if (user !== 'null' && user !== null) {
     user = JSON.parse(user)
     console.log(user);
     if (user[0].fields.is_superuser) {
