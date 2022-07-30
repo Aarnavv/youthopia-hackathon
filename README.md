@@ -1,4 +1,15 @@
 
+to start the server
+go to folder backend
+cd backend
+python3 manage.py runserver 
+
+to createsuperuser
+python3 manage.py createsuperuser
+
+to start react go to root of the folder
+then run
+npm start
 
 
 
