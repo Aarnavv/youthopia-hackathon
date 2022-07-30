@@ -32,50 +32,52 @@ const pages = [
   <Route key={1} path="/home/theatre-reservations" element={<><Navbar /> <TheatreReservations />  <Footer />  </>} />,
 ]
 
+// localStorage.removeItem('user')
 let user = localStorage.getItem('user')
 
 const admin_pages = [
-	<Route
-		key={1}
-		path="/home/admin/make-announcements"
-		element={
-			<>
-				<Navbar /> <AdminAnnouncements /> <Footer />{' '}
-			</>
-		}
-	/>,
-	<Route
-		key={1}
-		path="/home/admin/view-complaints"
-		element={
-			<>
-				<Navbar /> <AdminComplaints /> <Footer />{' '}
-			</>
-		}
-	/>,
-	<Route
-		key={1}
-		path="/home/admin/view-suggestions"
-		element={
-			<>
-				<Navbar />
-				<AdminSuggestions /> <Footer />{' '}
-			</>
-		}
-	/>,
+  <Route
+    key={1}
+    path="/home/admin/make-announcements"
+    element={
+      <>
+        <Navbar /> <AdminAnnouncements /> <Footer />{' '}
+      </>
+    }
+  />,
+  <Route
+    key={1}
+    path="/home/admin/view-complaints"
+    element={
+      <>
+        <Navbar /> <AdminComplaints /> <Footer />{' '}
+      </>
+    }
+  />,
+  <Route
+    key={1}
+    path="/home/admin/view-suggestions"
+    element={
+      <>
+        <Navbar />
+        <AdminSuggestions /> <Footer />{' '}
+      </>
+    }
+  />,
 ]
 
 
 function renderPage() {
-	if (user !== null) {
+  if (user !== null) {
     user = JSON.parse(user)
-	  if (user[0].fields.is_superuser) {
-		return [admin_pages,...pages]
-	  }
-    else{
+    console.log(user);
+    if (user[0].fields.is_superuser) {
+    return [admin_pages, ...pages]
+    }
+    else {
       return pages
     }
-    }
+  }
 }
 
 const page = (
